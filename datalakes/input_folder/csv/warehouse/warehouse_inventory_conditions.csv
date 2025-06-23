@@ -1,0 +1,91 @@
+warehouse_id,date,item_type,damaged_units,total_units,storage_temp_c
+WH-001,6/1/2011,"HL Road Frame - Black, 58",16,574,90.14
+WH-001,6/1/2011,"HL Road Frame - Red, 58",13,591,83.3
+WH-001,6/1/2011,"Sport-100 Helmet, Red",8,448,89.06
+WH-002,6/1/2012,"Sport-100 Helmet, Black",9,537,89.24
+WH-002,6/1/2012,"Mountain Bike Socks, M",5,562,85.28
+WH-002,6/1/2012,"Mountain Bike Socks, L",9,414,91.4
+WH-003,6/1/2013,"Sport-100 Helmet, Blue",8,439,91.4
+WH-003,6/1/2013,AWC Logo Cap,8,460,90.86
+WH-003,6/1/2013,"Long-Sleeve Logo Jersey, S",5,494,92.3
+WH-001,6/2/2011,"Long-Sleeve Logo Jersey, M",3,428,91.04
+WH-001,6/2/2011,"Long-Sleeve Logo Jersey, L",6,408,83.48
+WH-001,6/2/2011,"Long-Sleeve Logo Jersey, XL",14,556,89.96
+WH-002,6/2/2012,"HL Road Frame - Red, 62",8,544,86
+WH-002,6/2/2012,"HL Road Frame - Red, 44",9,464,87.62
+WH-002,6/2/2012,"HL Road Frame - Red, 48",6,484,81.5
+WH-003,6/2/2013,"HL Road Frame - Red, 52",4,467,90.68
+WH-003,6/2/2013,"HL Road Frame - Red, 56",6,581,90.86
+WH-003,6/2/2013,"LL Road Frame - Black, 58",9,581,89.42
+WH-001,6/3/2011,"LL Road Frame - Black, 60",4,470,88.16
+WH-001,6/3/2011,"LL Road Frame - Black, 62",7,485,88.34
+WH-001,6/3/2011,"LL Road Frame - Red, 44",6,598,83.66
+WH-002,6/3/2012,"LL Road Frame - Red, 48",6,421,86.72
+WH-002,6/3/2012,"LL Road Frame - Red, 52",6,443,87.26
+WH-002,6/3/2012,"LL Road Frame - Red, 58",13,525,85.1
+WH-003,6/3/2013,"LL Road Frame - Red, 60",11,538,89.96
+WH-003,6/3/2013,"LL Road Frame - Red, 62",6,446,87.26
+WH-003,6/3/2013,"ML Road Frame - Red, 44",5,539,81.14
+WH-001,6/4/2011,"ML Road Frame - Red, 48",7,428,91.94
+WH-001,6/4/2011,"ML Road Frame - Red, 52",6,484,92.66
+WH-001,6/4/2011,"ML Road Frame - Red, 58",6,561,85.1
+WH-002,6/4/2012,"ML Road Frame - Red, 60",2,488,83.12
+WH-002,6/4/2012,"LL Road Frame - Black, 44",8,545,82.58
+WH-002,6/4/2012,"LL Road Frame - Black, 48",8,594,85.28
+WH-003,6/4/2013,"LL Road Frame - Black, 52",2,402,81
+WH-003,6/4/2013,"HL Mountain Frame - Silver, 42",3,455,81.14
+WH-003,6/4/2013,"HL Mountain Frame - Silver, 44",11,505,87.8
+WH-001,6/5/2011,"HL Mountain Frame - Silver, 48",10,537,87.8
+WH-001,6/5/2011,"HL Mountain Frame - Silver, 46",8,532,87.8
+WH-001,6/5/2011,"HL Mountain Frame - Black, 42",5,424,86.18
+WH-002,6/5/2012,"HL Mountain Frame - Black, 44",6,401,92.12
+WH-002,6/5/2012,"HL Mountain Frame - Black, 48",2,445,81.32
+WH-002,6/5/2012,"HL Mountain Frame - Black, 46",10,444,84.02
+WH-003,6/5/2013,"HL Mountain Frame - Black, 38",11,407,91.04
+WH-003,6/5/2013,"HL Mountain Frame - Silver, 38",6,476,80.78
+WH-003,6/5/2013,"Road-150 Red, 62",13,515,93.02
+WH-001,6/6/2011,"Road-150 Red, 44",4,454,83.12
+WH-001,6/6/2011,"Road-150 Red, 48",2,455,81
+WH-001,6/6/2011,"Road-150 Red, 52",5,507,88.52
+WH-002,6/6/2012,"Road-150 Red, 56",5,590,85.28
+WH-002,6/6/2012,"Road-450 Red, 58",4,402,85.28
+WH-002,6/6/2012,"Road-450 Red, 60",9,591,80.78
+WH-003,6/6/2013,"Road-450 Red, 44",12,596,82.94
+WH-003,6/6/2013,"Road-450 Red, 48",5,416,86.9
+WH-003,6/6/2013,"Road-450 Red, 52",11,404,88.7
+WH-001,6/7/2011,"Road-650 Red, 58",7,454,83.3
+WH-001,6/7/2011,"Road-650 Red, 60",11,593,83.66
+WH-001,6/7/2011,"Road-650 Red, 62",11,430,89.42
+WH-002,6/7/2012,"Road-650 Red, 44",12,552,85.46
+WH-002,6/7/2012,"Road-650 Red, 48",11,519,85.82
+WH-002,6/7/2012,"Road-650 Red, 52",10,600,81.14
+WH-003,6/7/2013,"Road-650 Black, 58",6,445,82.4
+WH-003,6/7/2013,"Road-650 Black, 60",12,575,85.46
+WH-003,6/7/2013,"Road-650 Black, 62",12,513,87.8
+WH-001,6/8/2011,"Road-650 Black, 44",14,542,88.52
+WH-001,6/8/2011,"Road-650 Black, 48",5,461,85.82
+WH-001,6/8/2011,"Road-650 Black, 52",5,491,86.72
+WH-002,6/8/2012,"Mountain-100 Silver, 38",4,425,88.34
+WH-002,6/8/2012,"Mountain-100 Silver, 42",5,407,84.74
+WH-002,6/8/2012,"Mountain-100 Silver, 44",7,599,81.68
+WH-003,6/8/2013,"Mountain-100 Silver, 48",9,552,86.72
+WH-003,6/8/2013,"Mountain-100 Black, 38",9,452,86.54
+WH-003,6/8/2013,"Mountain-100 Black, 42",8,425,87.62
+WH-001,6/9/2011,"Mountain-100 Black, 44",13,495,87.26
+WH-001,6/9/2011,"Mountain-100 Black, 48",4,476,88.16
+WH-001,6/9/2011,"Mountain-200 Silver, 38",3,405,90.14
+WH-002,6/9/2012,"Mountain-200 Silver, 42",6,558,87.8
+WH-002,6/9/2012,"Mountain-200 Silver, 46",11,412,93.02
+WH-002,6/9/2012,"Mountain-200 Black, 38",4,474,84.92
+WH-003,6/9/2013,"Mountain-200 Black, 42",5,487,84.56
+WH-003,6/9/2013,"Mountain-200 Black, 46",7,539,87.26
+WH-003,6/9/2013,"Mountain-300 Black, 38",9,485,91.76
+WH-001,6/10/2011,"Mountain-300 Black, 40",5,458,88.52
+WH-001,6/10/2011,"Mountain-300 Black, 44",8,500,82.22
+WH-001,6/10/2011,"Mountain-300 Black, 48",8,516,91.04
+WH-002,6/10/2012,"Road-250 Red, 44",5,522,80.6
+WH-002,6/10/2012,"Road-250 Red, 48",12,592,92.3
+WH-002,6/10/2012,"Road-250 Red, 52",7,416,86.18
+WH-003,6/10/2013,"Road-250 Red, 58",14,456,92.48
+WH-003,6/10/2013,"Road-250 Black, 44",6,575,92.12
+WH-003,6/10/2013,"Road-250 Black, 48",3,522,86.9
