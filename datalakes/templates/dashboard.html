@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center text-white">Selamat Datang di Dashboard</h1>
+    <p class="text-center text-white">
+        Dashboard ini merupakan data dummy untuk tugas matakuliah Datalake House
+        studi kasus yang menggunakan data dari AdventureWorks.
+    </p>
+    <p class="text-center text-white">Silakan pilih salah satu sumber data:</p>
+
+    <div class="row justify-content-center">
+        <!-- Card TXT -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm text-white"
+                style="background: linear-gradient(to right, rgba(177, 59, 255, 0.85), rgba(255, 204, 0, 0.8)); overflow: hidden;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Analisis TXT</h5>
+                    <img src="{{ url_for('static', filename='icon.png') }}"
+                        alt="Icon" class="img-fluid my-3"
+                        style="max-height: 80px;">
+                    <p class="card-text">Media Sosial</p>
+                    <a href="/txt" class="btn border-0"
+                        style="background: #FFCC00;">
+                        Lihat Analisis
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card PDF -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm text-white"
+                style="background: linear-gradient(to right, rgba(177, 59, 255, 0.85), rgba(255, 204, 0, 0.8)); overflow: hidden;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Analisis PDF</h5>
+                    <img src="{{ url_for('static', filename='icon.png') }}"
+                        alt="Icon" class="img-fluid my-3"
+                        style="max-height: 80px;">
+                    <p class="card-text">Laporan Keuangan</p>
+                    <a href="/pdf" class="btn border-0"
+                        style="background: #FFCC00">
+                        Lihat Analisis
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card CSV -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm text-white"
+                style="background: linear-gradient(to right, rgba(177, 59, 255, 0.85), rgba(255, 204, 0, 0.8)); overflow: hidden;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Analisis CSV</h5>
+                    <img src="{{ url_for('static', filename='icon.png') }}"
+                        alt="Icon" class="img-fluid my-3"
+                        style="max-height: 80px;">
+                    <p class="card-text">Data Gudang</p>
+                    <a href="/csv" class="btn border-0"
+                        style="background: #FFCC00">
+                        Lihat Analisis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

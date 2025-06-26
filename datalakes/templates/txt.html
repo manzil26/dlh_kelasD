@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+  <h3 class="text-white"> Analisis Sosial Media (TXT)</h3>
+
+  <div class="row mt-4 mb-4">
+    <div class="col-md-4">
+      <div class="card text-white h-100" style="
+       background: linear-gradient(135deg, #11998E, #38EF7D); 
+        border: none; border-radius: 14px; box-shadow: 0 8px 20px rgba(203, 202, 202, 0.3);">
+        <div class="card-body text-center">
+          <h5 class="card-title">Positif</h5>
+          <h3>{{ positif }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-white h-100" style="
+        background: linear-gradient(135deg, #7B42F6, #B01EFF); 
+        border: none; border-radius: 14px; box-shadow: 0 8px 20px rgba(203, 202, 202, 0.3);">
+        <div class="card-body text-center">
+          <h5 class="card-title">Netral</h5>
+          <h3>{{ netral }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-white h-100" style="
+         background: linear-gradient(135deg, #FF4E50, #F9D423); 
+        border: none; border-radius: 14px; box-shadow: 0 8px 20px rgba(203, 202, 202, 0.3);">
+        <div class="card-body text-center">
+          <h5 class="card-title">Negatif</h5>
+          <h3>{{ negatif }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5 mb-5">
+    <div class="row g-4">
+
+      <!-- Distribusi Sentimen -->
+      <div class="col-md-6">
+        <div class="card text-white h-100" style="
+        background: linear-gradient(to right, rgba(177, 59, 255, 0.15), rgba(255, 204, 0, 0.1));
+        border: none;
+        border-radius: 14px;
+        box-shadow: 0 8px 20px rgba(203, 202, 202, 0.3);">
+          <div class="card-body text-center">
+            <h5 class="card-title">Distribusi Sentimen</h5>
+            <img src="data:image/png;base64,{{ pie_chart }}" class="img-fluid"
+              alt="Distribusi Sentimen">
+          </div>
+        </div>
+      </div>
+
+      <!-- Sentimen per Subkategori Produk -->
+      <div class="col-md-6">
+        <div class="card text-white h-100" style="
+        background: linear-gradient(to right, rgba(177, 59, 255, 0.15), rgba(255, 204, 0, 0.1));
+        border: none;
+        border-radius: 14px;
+        box-shadow: 0 8px 20px rgba(203, 202, 202, 0.3);">
+          <div class="card-body text-center">
+            <h5 class="card-title"> Sentimen per Subkategori Produk</h5>
+            <img src="data:image/png;base64,{{ grouped_chart }}"
+              class="img-fluid" alt="Grouped Chart">
+          </div>
+        </div>
+      </div>
+
+      <!-- Jumlah Komentar per Platform -->
+      <div class="col-md-6">
+        <div class="card text-white h-100" style="
+        background: linear-gradient(to right, rgba(177, 59, 255, 0.15), rgba(255, 204, 0, 0.1));
+        border: none;
+        border-radius: 14px;
+        box-shadow: 0 8px 20px rgba(203, 202, 202, 0.3);">
+          <div class="card-body text-center">
+            <h5 class="card-title"> Jumlah Komentar per Platform</h5>
+            <img src="data:image/png;base64,{{ platform_chart }}"
+              class="img-fluid" alt="Komentar Platform">
+          </div>
+        </div>
+      </div>
+
+      <!-- Perbandingan Sentimen antar Platform -->
+      <div class="col-md-6">
+        <div class="card text-white h-100" style="
+        background: linear-gradient(to right, rgba(177, 59, 255, 0.15), rgba(255, 204, 0, 0.1));
+        border: none;
+        border-radius: 14px;
+        box-shadow: 0 8px 20px rgba(203, 202, 202, 0.3);">
+          <div class="card-body text-center">
+            <h5 class="card-title"> Perbandingan Sentimen antar Platform</h5>
+            <img src="data:image/png;base64,{{ stacked_chart }}"
+              class="img-fluid" alt="Stacked Platform Chart">
+          </div>
+        </div>
+      </div>
+
+      <!-- Tren Sentimen per Tahun -->
+      <div class="col-12">
+        <div class="card text-white h-100" style="
+        background: linear-gradient(to right, rgba(177, 59, 255, 0.15), rgba(255, 204, 0, 0.1));
+        border: none;
+        border-radius: 14px;
+        box-shadow: 0 8px 20px rgba(203, 202, 202, 0.3);">
+          <div class="card-body text-center">
+            <h5 class="card-title">Tren Sentimen per Tahun</h5>
+            <img src="data:image/png;base64,{{ trend_chart }}" class="img-fluid"
+              alt="Tren Sentimen">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+{% endblock %}

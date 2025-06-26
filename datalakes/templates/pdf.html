@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+  body {
+    background-image: linear-gradient(#471396, #090040);
+    background-attachment: fixed;
+  }
+</style>
+
+<h1 class="text-center text-white">Dashboard Analisis Keuangan Kompetitor</h1>
+
+<!-- Insight Angka -->
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card text-white mb-3"
+            style="background: linear-gradient(135deg, #FF4E50, #F9D423); border: none;">
+            <div class="card-body">
+                <h5 class="card-title">Produk Terlaris</h5>
+                <p class="card-text fs-4">{{ top_product }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white mb-3"
+            style="background: linear-gradient(135deg, #FF4E50, #F9D423); border: none;">
+            <div class="card-body">
+                <h5 class="card-title">Segmen Pasar Tertinggi</h5>
+                <p class="card-text fs-4">{{ top_segment }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white mb-3"
+            style="background: linear-gradient(135deg, #FF4E50, #F9D423); border: none;">
+            <div class="card-body">
+                <h5 class="card-title">Wilayah Potensial</h5>
+                <p class="card-text fs-4">{{ top_location }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Visualisasi 1: Perbandingan Kinerja Kompetitor -->
+<div class="card text-white my-4"
+    style="background: linear-gradient(to right, rgba(255, 78, 80, 0.15), rgba(249, 212, 35, 0.1)); border: none;">
+    <div class="card-body text-center"> <!-- Tambahkan text-center -->
+        <h5 class="card-title">Perbandingan Pendapatan, Pengeluaran, dan Laba
+            antar Kompetitor</h5>
+        <div class="d-flex justify-content-center mt-3">
+            <!-- Bungkus gambar dengan flex -->
+            <img src="data:image/png;base64,{{ chart_kinerja }}"
+                class="img-fluid rounded" alt="Kinerja Kompetitor"
+                style="max-width: 100%;">
+        </div>
+    </div>
+</div>
+
+<!-- Visualisasi 2 & 3 -->
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card text-white h-100"
+            style="background: linear-gradient(to right, rgba(255, 78, 80, 0.15), rgba(249, 212, 35, 0.1)); border: none;">
+            <div class="card-body">
+                <h5 class="card-title">Top Produk Terlaris Kompetitor</h5>
+                <img src="data:image/png;base64,{{ chart_produk }}"
+                    class="img-fluid rounded" alt="Produk Terlaris">
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card text-white h-100"
+            style="background: linear-gradient(to right, rgba(255, 78, 80, 0.15), rgba(249, 212, 35, 0.1)); border: none;">
+            <div class="card-body">
+                <h5 class="card-title">Distribusi Segmen Pasar</h5>
+                <img src="data:image/png;base64,{{ chart_segmentasi }}"
+                    class="img-fluid rounded" alt="Segmentasi Pasar">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Visualisasi 4 & 5 -->
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card text-white h-100"
+            style="background: linear-gradient(to right, rgba(255, 78, 80, 0.15), rgba(249, 212, 35, 0.1)); border: none;">
+            <div class="card-body">
+                <h5 class="card-title">Wilayah dengan Pendapatan Tertinggi</h5>
+                <img src="data:image/png;base64,{{ chart_lokasi }}"
+                    class="img-fluid rounded" alt="Lokasi Potensial">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card text-white h-100"
+            style="background: linear-gradient(to right, rgba(255, 78, 80, 0.15), rgba(249, 212, 35, 0.1)); border: none;">
+            <div class="card-body">
+                <h5 class="card-title">Tren Pendapatan & Laba dari Waktu ke
+                    Waktu</h5>
+                <img src="data:image/png;base64,{{ chart_tren }}"
+                    class="img-fluid rounded" alt="Tren Kinerja">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

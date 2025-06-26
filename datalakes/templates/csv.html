@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+  body {
+    background-image: linear-gradient( #471396 , #090040);
+    background-attachment: fixed; /* Ensures the gradient covers the whole page even on scroll */
+   
+  }
+
+  
+</style>
+
+<h1 class="text-center" style="color: white;">
+    Dashboard Analisis Gudang Adventureworks
+</h1>
+
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card text-white mb-3" style="
+            background: linear-gradient(135deg, #7B42F6, #B01EFF); 
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        ">
+            <div class="card-body">
+                <h5 class="card-title">Jumlah Gudang</h5>
+                <p class="card-text fs-4">{{ total_warehouses }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white mb-3" style="
+            background: linear-gradient(135deg, #FF4E50, #F9D423); 
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        ">
+            <div class="card-body">
+                <h5 class="card-title">Total Barang Rusak</h5>
+                <p class="card-text fs-4">{{ total_damaged }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white mb-3" style="
+            background: linear-gradient(135deg, #11998E, #38EF7D); 
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        ">
+            <div class="card-body">
+                <h5 class="card-title">Total Barang Tidak Rusak</h5>
+                <p class="card-text fs-4">{{ total_non_damaged }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Baris 1: Chart 1 dan Chart 2 -->
+<div class="row mt-4">
+    <div class="col-md-6 mb-4 shadow p-10 mb-10 rounded">
+        <div class="card text-white h-100" style="
+        background: linear-gradient(to right, rgba(177, 59, 255, 0.15), rgba(255, 204, 0, 0.1));
+        border: none;
+        border-radius: 14px;
+         box-shadow: 0 8px 20px rgba(203, 202, 202, 0.3);
+       
+    ">
+            <div class="card-body">
+                <h5 class="card-title">Distribusi Produk Rusak</h5>
+                <img src="data:image/png;base64,{{ chart1 }}"
+                    class="img-fluid rounded" alt="Chart Produk Rusak">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card text-white h-100" style="
+        background: linear-gradient(to right, rgba(177, 59, 255, 0.15), rgba(255, 204, 0, 0.1));
+        border: none;
+        border-radius: 14px;
+         box-shadow: 0 8px 20px rgba(203, 202, 202, 0.3);
+    ">
+            <div class="card-body mt-10">
+                <h5 class="card-title">Pengaruh Suhu terhadap Kerusakan</h5>
+                <img src="data:image/png;base64,{{ chart2 }}"
+                    class="img-fluid rounded" alt="Chart Suhu">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Baris 2: Chart 3 dan Chart 4 -->
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card text-white h-100" style="
+        background: linear-gradient(to right, rgba(177, 59, 255, 0.15), rgba(255, 204, 0, 0.1));
+        border: none;
+        border-radius: 14px;
+         box-shadow: 0 8px 20px rgba(203, 202, 202, 0.3);
+    ">
+            <div class="card-body">
+                <h5 class="card-title"> Distribusi Lokasi Gudang Berdasarkan
+                    Kerusakan</h5>
+                <img src="data:image/png;base64,{{ chart3 }}"
+                    class="img-fluid rounded" alt="Chart Gudang">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card text-white h-100" style="
+        background:  linear-gradient(to right, rgba(177, 59, 255, 0.15), rgba(255, 204, 0, 0.1));
+        border: none;
+        border-radius: 14px;
+         box-shadow: 0 8px 20px rgba(203, 202, 202, 0.3);
+    ">
+            <div class="card-body">
+                <h5 class="card-title"> Tren Kerusakan dari Waktu ke
+                    Waktu</h5>
+                <img src="data:image/png;base64,{{ chart4 }}"
+                    class="img-fluid rounded" alt="Chart Tren Kerusakan">
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 class="text-center" style="color: white; margin-top: 20px;">
+    tabel top 10 kerusakan produk
+</h3>
+
+<table style="
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+     background: linear-gradient(to right, rgba(177, 59, 255, 0.85), rgba(255, 204, 0, 0.8));
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-collapse: collapse;
+">
+    <thead style="
+        background: rgba(90, 40, 160, 0.95);
+        color: white;
+        font-weight: bold;
+    ">
+        <tr>
+            <th style="padding: 14px 18px;">Produk</th>
+            <th style="padding: 14px 18px;">Rusak</th>
+            <th style="padding: 14px 18px;">Total Unit</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for name, damaged, total in damage_data %}
+        <tr style="
+            background: 
+                linear-gradient(to right, rgba(160, 100, 255, 0.65), rgba(200, 150, 255, 0.6))
+                linear-gradient(to right, rgba(200, 160, 255, 0.6), rgba(240, 200, 255, 0.55)); 
+                color: white; border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        ">
+            <td style="padding: 12px 18px;">{{ name }}</td>
+            <td style="padding: 12px 18px;">{{ damaged }}</td>
+            <td style="padding: 12px 18px;">{{ total }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

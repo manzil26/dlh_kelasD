@@ -16,12 +16,12 @@ def move_files_by_type():
         "txt": os.path.join(target_base, "txt"),
     }
 
-    # Buat folder dasar
+    # Membuat Folder Tujuan Jika Belum Ada
     for folder in file_paths.values():
         os.makedirs(folder, exist_ok=True)
 
     files_moved = False
-
+# Proses Pemindahan File
     for filename in os.listdir(source_dir):
         ext = os.path.splitext(filename)[1].lower()
         if ext in [".pdf", ".csv", ".txt"]:

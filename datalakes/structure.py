@@ -6,7 +6,6 @@ from datetime import date
 from datetime import datetime
 from psycopg2.errors import UniqueViolation
 from analyze import get_staging_connection
-
 # from psycopg2.extras import execute_values
 
 def get_connection_dw():
@@ -57,6 +56,8 @@ def calculate_score(label):
     return 1 if label.lower() == "positif" else -1 if label.lower() == "negatif" else 0
 
 
+
+
 def insert_sentiment(cur, product_name, subcategory, sentiment_label):
     norm_product_name = product_name.strip()
     norm_subcategory = subcategory.strip()
@@ -80,21 +81,33 @@ def insert_sentiment(cur, product_name, subcategory, sentiment_label):
         if existing_label == norm_label:
             return existing_key
         else:
+            # Tandai data lama sebagai tidak aktif
             cur.execute("""
                 UPDATE dim_sentiment
                 SET valid_to = CURRENT_DATE, is_current = FALSE
                 WHERE sentiment_key = %s
             """, (existing_key,))
     
-    # Insert baru
-    cur.execute("""
-        INSERT INTO dim_sentiment (
-            product_name, product_subcategory, sentiment_label, valid_from, is_current
-        ) VALUES (%s, %s, %s, %s, TRUE)
-        RETURNING sentiment_key
-    """, (norm_product_name, norm_subcategory, norm_label, date.today()))
-    
-    return cur.fetchone()[0]
+    # Coba insert baru (yang aktif)
+    try:
+        cur.execute("""
+            INSERT INTO dim_sentiment (
+                product_name, product_subcategory, sentiment_label, valid_from, is_current
+            ) VALUES (%s, %s, %s, %s, TRUE)
+            RETURNING sentiment_key
+        """, (norm_product_name, norm_subcategory, norm_label, date.today()))
+        return cur.fetchone()[0]
+    except Exception as e:
+        # Jika gagal karena duplikat data yang non-aktif, ambil yang sudah ada
+        cur.execute("""
+            SELECT sentiment_key 
+            FROM dim_sentiment 
+            WHERE product_name = %s 
+              AND product_subcategory = %s 
+              AND sentiment_label = %s
+              AND is_current = FALSE
+        """, (norm_product_name, norm_subcategory, norm_label))
+        return cur.fetchone()[0]
 
 
 def insert_fact(cur, time_id, platform_key, sentiment_key, post_count):
