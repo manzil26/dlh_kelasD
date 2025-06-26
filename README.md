@@ -1,6 +1,4 @@
 
-                                                                                    DATA LAKEHOUSE 
-
 Repository ini berisi kode dan dokumen hasil analisis structured dan unstructured datawarehouse dari data dummy adaventureworks dan beberpa data dummy lainnya untuk keperluan tugas kuliah datalakehouse 
 
 berikut hasil visualisasi dari data unstructured 
